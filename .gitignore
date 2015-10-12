@@ -1,0 +1,8 @@
+*.suo
+bin/
+obj/
+_Resharper*/
+*.user
+*.dotCover
+data/
+credentials.txt
