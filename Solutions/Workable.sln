@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Core", "..\Project
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Core.Tests.Integration", "..\Tests\Workable.Core.Tests.Integration\Workable.Core.Tests.Integration.csproj", "{32D899DB-DC22-47F7-AA58-317657D14B82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Gmail.Preprocessor", "..\Projects\Workable.Gmail.Preprocessor\Workable.Gmail.Preprocessor.csproj", "{01373ECD-F97F-4D68-8453-39B4B786472D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{32D899DB-DC22-47F7-AA58-317657D14B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D899DB-DC22-47F7-AA58-317657D14B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D899DB-DC22-47F7-AA58-317657D14B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01373ECD-F97F-4D68-8453-39B4B786472D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01373ECD-F97F-4D68-8453-39B4B786472D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01373ECD-F97F-4D68-8453-39B4B786472D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01373ECD-F97F-4D68-8453-39B4B786472D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
