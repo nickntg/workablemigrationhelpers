@@ -4,5 +4,5 @@ obj/
 _Resharper*/
 *.user
 *.dotCover
-data/
+data/trello/
 credentials.txt

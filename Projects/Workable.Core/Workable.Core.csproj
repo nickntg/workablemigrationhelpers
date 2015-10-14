@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MsgReader">
+      <HintPath>..\..\Solutions\packages\MSGReader.1.9.8\lib\MsgReader.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\..\Solutions\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
     </Reference>
@@ -44,6 +47,9 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="Migration\Decision.cs" />
+    <Compile Include="Migration\Gmail\Classification.cs" />
+    <Compile Include="Migration\Gmail\Interfaces\IMailClassifier.cs" />
+    <Compile Include="Migration\Gmail\MboxReader.cs" />
     <Compile Include="Migration\Trello\Attachment.cs" />
     <Compile Include="Migration\Trello\Board.cs" />
     <Compile Include="Migration\Trello\Card.cs" />
