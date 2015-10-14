@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Net;
+using RestSharp;
 
 namespace Workable.Core.Interfaces
 {
@@ -10,8 +11,10 @@ namespace Workable.Core.Interfaces
 
         string RequestUrl { get; set; }
 
-        T Execute<T>(RestRequest request) where T : new();
+        T Execute<T>(RestRequest request, HttpStatusCode? expectedCode) where T : new();
 
         JobArray GetJobs();
+
+        WorkableCandidate AddCandidate(WorkableCandidate candidate, string stage, string jobId);
     }
 }
