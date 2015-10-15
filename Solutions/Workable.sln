@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Core", "..\Projects\Workable.Core\Workable.Core.csproj", "{7472B6D5-16FF-4797-8F41-F0383C074F68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Core.Tests.Integration", "..\Tests\Workable.Core.Tests.Integration\Workable.Core.Tests.Integration.csproj", "{32D899DB-DC22-47F7-AA58-317657D14B82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Gmail.Preprocessor", "..\Projects\Workable.Gmail.Preprocessor\Workable.Gmail.Preprocessor.csproj", "{01373ECD-F97F-4D68-8453-39B4B786472D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Gmail.Postprocessor", "..\Projects\Workable.Gmail.Postprocessor\Workable.Gmail.Postprocessor.csproj", "{6141A873-794C-478F-8DE1-A5B874724BAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{01373ECD-F97F-4D68-8453-39B4B786472D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01373ECD-F97F-4D68-8453-39B4B786472D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01373ECD-F97F-4D68-8453-39B4B786472D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6141A873-794C-478F-8DE1-A5B874724BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6141A873-794C-478F-8DE1-A5B874724BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6141A873-794C-478F-8DE1-A5B874724BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6141A873-794C-478F-8DE1-A5B874724BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

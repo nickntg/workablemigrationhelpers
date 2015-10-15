@@ -15,19 +15,39 @@ namespace Workable.Core.Migration.Gmail
             {
                 var buffer = new StringBuilder();
                 var blank = true;
+                var classified = 0;
+                var skipped = 0;
 
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine();
-                    if (string.IsNullOrEmpty(line))
-                    {
-                        continue;
-                    }
 
                     if (blank && line.StartsWith("From ") && buffer.Length != 0)
                     {
-                        Classify(classifier, saveDirectory, buffer);
-                        buffer = new StringBuilder();
+                        try
+                        {
+                            if (Classify(classifier, saveDirectory, buffer))
+                            {
+                                classified++;
+                            }
+                            else
+                            {
+                                skipped++;
+                            }
+                            buffer = new StringBuilder();
+
+                            if ((classified + skipped) % 10 == 0)
+                            {
+                                Console.SetCursorPosition(0, 0);
+                                Console.WriteLine("Skipped: {0}", skipped);
+                                Console.WriteLine("Classified: {0}", classified);
+                                Console.WriteLine("Read percentage: {0}", sr.BaseStream.Position * 100 / sr.BaseStream.Length);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
                     }
                     else
                     {
@@ -43,22 +63,33 @@ namespace Workable.Core.Migration.Gmail
             }
         }
 
-        private void Classify(IMailClassifier classifier, string saveDirectory, StringBuilder buffer)
+        private bool Classify(IMailClassifier classifier, string saveDirectory, StringBuilder buffer)
         {
-            var classification = classifier.ClassifyMail(new Message(Encoding.Default.GetBytes(buffer.ToString())));
-
-            if (classification == null)
+            try
             {
-                return;
-            }
+                var classification = classifier.ClassifyMail(new Message(Encoding.Default.GetBytes(buffer.ToString())));
 
-            var dir = Path.Combine(saveDirectory, classification.Job);
-            Directory.CreateDirectory(dir);
-            dir = Path.Combine(dir,
-                string.Format("{0}.{1}.json", classification.Submitted.ToString("yyyyMMdd_HHmmss"),
-                    Guid.NewGuid().ToString().Replace("-", "")));
-            var contents = new JsonSerializer().Serialize(classification);
-            File.WriteAllText(dir, contents);
+                if (classification == null)
+                {
+                    return false;
+                }
+
+                var dir = Path.Combine(saveDirectory, classification.Job.Replace("/", "_").Replace(":", "_").Replace("\\", "_").Replace("<", "_").Replace(">", "_").Replace("\"", "_").Replace("EOF", "E_O_F_"));
+                Directory.CreateDirectory(dir);
+                dir = Path.Combine(dir,
+                    string.Format("{0}.{1}.json", classification.Submitted.ToString("yyyyMMdd_HHmmss"),
+                        Guid.NewGuid().ToString().Replace("-", "")));
+                var contents = new JsonSerializer().Serialize(classification);
+                File.WriteAllText(dir, contents);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.ReadKey();
+                Console.Clear();
+                return false;
+            }
         }
     }
 }
