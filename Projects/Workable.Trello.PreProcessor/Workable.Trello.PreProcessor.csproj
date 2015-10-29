@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7472B6D5-16FF-4797-8F41-F0383C074F68}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Workable.Core</RootNamespace>
-    <AssemblyName>Workable.Core</AssemblyName>
+    <RootNamespace>Workable.Trello.PreProcessor</RootNamespace>
+    <AssemblyName>Workable.Trello.PreProcessor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,11 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MsgReader">
-      <HintPath>..\..\Solutions\packages\MSGReader.1.9.8\lib\MsgReader.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp">
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\Solutions\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,39 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Answer.cs" />
-    <Compile Include="Migration\Comment.cs" />
-    <Compile Include="Migration\Decision.cs" />
-    <Compile Include="Migration\Classification.cs" />
-    <Compile Include="Migration\Gmail\Interfaces\IMailClassifier.cs" />
-    <Compile Include="Migration\Gmail\MboxReader.cs" />
-    <Compile Include="Migration\Trello\Attachment.cs" />
-    <Compile Include="Migration\Trello\Board.cs" />
-    <Compile Include="Migration\Trello\Card.cs" />
-    <Compile Include="Migration\Trello\Interfaces\ITrelloClassifier.cs" />
-    <Compile Include="Migration\Trello\Label.cs" />
-    <Compile Include="Migration\Trello\List.cs" />
-    <Compile Include="Migration\Trello\Member.cs" />
-    <Compile Include="Migration\Trello\TrelloReader.cs" />
-    <Compile Include="Migration\Trello\Utils.cs" />
-    <Compile Include="WorkableCandidate.cs" />
-    <Compile Include="CandidateImage.cs" />
-    <Compile Include="CandidateInner.cs" />
-    <Compile Include="EducationEntry.cs" />
-    <Compile Include="ExperienceEntry.cs" />
-    <Compile Include="Interfaces\IWorkableClient.cs" />
-    <Compile Include="Job.cs" />
-    <Compile Include="Jobs.cs" />
-    <Compile Include="Location.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resume.cs" />
-    <Compile Include="SocialProfile.cs" />
-    <Compile Include="WorkableClient.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Workable.Core\Workable.Core.csproj">
+      <Project>{7472b6d5-16ff-4797-8f41-f0383c074f68}</Project>
+      <Name>Workable.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

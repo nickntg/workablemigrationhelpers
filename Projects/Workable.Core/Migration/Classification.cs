@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Workable.Core.Migration.Gmail
+namespace Workable.Core.Migration
 {
     public class Classification
     {
@@ -21,5 +22,11 @@ namespace Workable.Core.Migration.Gmail
         public string Attachment { get; set; }
 
         public string AttachmentName { get; set; }
+
+        public List<Comment> Comments { get; set; }
+
+        public string Stage { get; set; }
+
+        public bool IsDisqualified { get; set; }
     }
 }

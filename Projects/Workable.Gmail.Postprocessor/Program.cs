@@ -2,6 +2,7 @@
 using System.IO;
 using RestSharp;
 using Workable.Core;
+using Workable.Core.Migration;
 using Workable.Core.Migration.Gmail;
 
 namespace Workable.Gmail.Postprocessor
@@ -49,6 +50,7 @@ namespace Workable.Gmail.Postprocessor
 
             foreach (var dir in parameters.Subdirs)
             {
+                Console.WriteLine(dir);
                 var files = Directory.GetFiles(Path.Combine(parameters.SourceDir, dir), "*.json");
                 foreach (var file in files)
                 {

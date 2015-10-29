@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using MsgReader.Mime;
 using NUnit.Framework;
+using Workable.Core.Migration;
 using Workable.Core.Migration.Gmail;
 using Workable.Core.Migration.Gmail.Interfaces;
 

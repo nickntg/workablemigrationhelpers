@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Gmail.Preprocessor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Gmail.Postprocessor", "..\Projects\Workable.Gmail.Postprocessor\Workable.Gmail.Postprocessor.csproj", "{6141A873-794C-478F-8DE1-A5B874724BAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workable.Trello.PreProcessor", "..\Projects\Workable.Trello.PreProcessor\Workable.Trello.PreProcessor.csproj", "{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6141A873-794C-478F-8DE1-A5B874724BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6141A873-794C-478F-8DE1-A5B874724BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6141A873-794C-478F-8DE1-A5B874724BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87B5B8B-EB48-4FF5-8C65-7F75552EB64E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

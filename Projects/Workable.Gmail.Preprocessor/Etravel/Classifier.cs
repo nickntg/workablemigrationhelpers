@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using MsgReader.Mime;
+using Workable.Core.Migration;
 using Workable.Core.Migration.Gmail;
 using Workable.Core.Migration.Gmail.Interfaces;
 
